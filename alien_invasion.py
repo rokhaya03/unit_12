@@ -1,3 +1,7 @@
+# Name:Rokhaya Diagne, Date; 11/14/2025 
+#  I changed the game's setup so the ship starts on the left side of the screen and points toward the middle.
+#  I made it so the Up key moves the ship up, and the Down key moves the ship down. 
+# Also, the bullets now shoot to the right instead of the original direction, matching where the ship is pointing.
 import sys
 import pygame
 from settings import Settings

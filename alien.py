@@ -5,29 +5,29 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
     from alien_invasion import AlienInvasion
 
-class Bullet(Sprite):
-    def __init__(self, game:"AlienInvasion"):
+class Alien(Sprite):
+    def __init__(self, game:"AlienInvasion",x:float, y:float):
         super().__init__()
         self.screen= game.screen
         self.boundaries=game.screen.get_rect()
         self.settings=game.settings
         
-        self.image= pygame.image.load(self.settings.bullet_file)
+        self.image= pygame.image.load(self.settings.alien_file)
         self.image= pygame.transform.scale(self.image,
-             (self.settings.bullet_w,self.settings.bullet_h))
+             (self.settings.alien_w,self.settings.alien_h))
         
-        self.image = pygame.transform.rotate(self.image, 90)
+        self.image = pygame.transform.rotate(self.image,270)
         self.rect=self.image.get_rect()
+        self.rect.x=x
+        self.rect.right = self.boundaries.right - x
+        self.rect.y=y
         
-
-        self.rect.centery=game.ship.rect.centery
         
         self.x= float (self.rect.x)
 
     def update(self):
-        self.x+=self.settings.bullet_speed
-        self.rect.x=self.x
+        pass
 
-    def draw_bullet(self):
+    def draw_alien(self):
         self.screen.blit(self.image, self.rect)
     

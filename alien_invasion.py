@@ -14,11 +14,7 @@ from time import sleep
 class AlienInvasion:
   
     def __init__(self):
-<<<<<<< HEAD
         """initializes the game"""
-=======
-        #initializes the game
->>>>>>> f4b1f7447c58567e9a487b1c9025247ccf8d01bc
         pygame.init()
         self.settings=Settings()
         self.game_stats=GameStats(self.settings.starting_ship_count)
@@ -50,11 +46,7 @@ class AlienInvasion:
         self.game_active=True
 
     def run_game(self):
-<<<<<<< HEAD
-        """Allows the game to continue running""" 
-=======
         #Allows the game to continue running 
->>>>>>> f4b1f7447c58567e9a487b1c9025247ccf8d01bc
         while self.running:
             self._check_events()
             if self.game_active:
@@ -85,11 +77,7 @@ class AlienInvasion:
           
 
     def _check_game_status(self):
-<<<<<<< HEAD
         """Checks to see if the player is still alive to see if damage is taken"""
-=======
-        #Checks to see if the player is still alive to see if damage is taken
->>>>>>> f4b1f7447c58567e9a487b1c9025247ccf8d01bc
         
         if self.game_stats.ships_left > 0:
             self.game_stats.ships_left-= 1
@@ -107,11 +95,7 @@ class AlienInvasion:
         self.alien_fleet.create_fleet() 
 
     def _update_screen(self):
-<<<<<<< HEAD
         """Displays all the ships,the alien fleet and the background""" 
-=======
-        #Displays all the ships,the alien fleet and the background 
->>>>>>> f4b1f7447c58567e9a487b1c9025247ccf8d01bc
         self.screen.blit(self.bg, (0,0))
         self.ship.draw()
         self.alien_fleet.draw ()
@@ -129,22 +113,14 @@ class AlienInvasion:
                 self._check_keyup_events(event)
     
     def _check_keyup_events(self,event):
-<<<<<<< HEAD
         """ Handle key release events"""
-=======
-        # Handle key release events
->>>>>>> f4b1f7447c58567e9a487b1c9025247ccf8d01bc
         if event.key==pygame.K_UP:
             self.ship.moving_up=False
         elif event.key==pygame.K_DOWN:
             self.ship.moving_down=False
      
     def _check_keydown_events(self,event):
-<<<<<<< HEAD
         """Depending on what key is pressed, it moves the ship, plays a sound and exits the game"""
-=======
-         #Depending on what key is pressed, it moves the ship, plays a sound and exits the game
->>>>>>> f4b1f7447c58567e9a487b1c9025247ccf8d01bc
         if event.key==pygame.K_UP:
             self.ship.moving_up=True
         elif event.key==pygame.K_DOWN:

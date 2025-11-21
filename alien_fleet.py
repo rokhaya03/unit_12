@@ -96,4 +96,8 @@ class AlienFleet:
             if alien.rect.right >= self.settings.screen_w:
                 return True
         return False
-        
+
+    def check_destroyed_status(self):
+        #Checks if an alien is destroyed
+
+        return not self.fleet    

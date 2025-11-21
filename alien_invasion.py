@@ -62,7 +62,11 @@ class AlienInvasion:
         if collisions:
             self.impact_sound.play()
             self.impact_sound.fadeout(500)
-            
+
+
+
+        if self.alien_fleet.check_destroyed_status():
+            self._reset_level()
 
     def _reset_level(self):
         #Resets the everything in the current level

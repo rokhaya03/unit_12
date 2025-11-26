@@ -7,7 +7,7 @@ if TYPE_CHECKING:
 
 class Button:
     
-    def __init__(self, game: 'AlienInvasion', msg) -> None:
+    def __init__(self, game: 'AlienInvasion', msg):
        
         self.game = game
         self.screen = game.screen
@@ -18,23 +18,23 @@ class Button:
         
         self.rect = pygame.Rect(0,0, self.settings.button_w,
                     self.settings.button_h)
-        self.center = self.boundaries.center
+        self.rect.center = self.boundaries.center
         self._prep_msg(msg)
 
 
-    def _prep_msg(self, msg) -> None:
+    def _prep_msg(self, msg):
        
         self.msg_image = self.font.render(msg, True, self.settings.text_color, None)
         self.msg_image_rect = self.msg_image.get_rect()
-        self.msg_image_rect.center = self.center
+        self.msg_image_rect.center = self.rect.center
 
     
-    def draw(self) -> None:
+    def draw(self):
         
         self.screen.fill(self.settings.button_color, self.rect)
         self.screen.blit(self.msg_image, self.msg_image_rect)
 
     
-    def check_clicked(self, mouse_pos) -> bool:
+    def check_clicked(self, mouse_pos):
        
         return self.rect.collidepoint(mouse_pos)

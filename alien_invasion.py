@@ -86,6 +86,7 @@ class AlienInvasion:
             self.settings.increase_difficulty()
             #update game stats level
             self.game_stats.update_level()
+            self.HUD.update_level()
 
     def _check_game_status(self):
         """Checks to see if the player is still alive to see if damage is taken"""

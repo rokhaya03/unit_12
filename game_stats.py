@@ -25,7 +25,7 @@ class GameStats():
             self.hi_score = 0
             self.save_scores()
     
-    def save_scores(self) -> None:
+    def save_scores(self):
         """Saves the new hi score into the json file
         """
         scores = {
